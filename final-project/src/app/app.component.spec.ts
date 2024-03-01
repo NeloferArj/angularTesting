@@ -37,15 +37,15 @@ describe('AppComponent', () => {
   it('should create the app', () => {
     expect(component).toBeTruthy();
   });
-  // it('should load data on initialization', () => {
-  //   const testData = { time: '03:53:25 AM', milliseconds_since_epoch: 1362196405309, date: '03-02-2013' };
-  //   dataServiceSpy.getData.and.returnValue(of(testData));
+  it('should load data on initialization', () => {
+    const testData = { time: '03:53:25 AM', milliseconds_since_epoch: 1362196405309, date: '03-02-2013' };
+    dataServiceSpy.getData.and.returnValue(of(testData));
 
-  //   component.ngOnInit();
+    component.ngOnInit();
 
-  //   expect(dataServiceSpy.getData).toHaveBeenCalled();
-  //   expect(component.data).toEqual(testData);
-  // });
+    expect(dataServiceSpy.getData).toHaveBeenCalled();
+    expect(component.data).toEqual(testData);
+  });
 
 
 it('should display the correct data in the UI', waitForAsync(() => {
